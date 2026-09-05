@@ -19,9 +19,9 @@ export default function HomePage() {
 
   return (
     <div className="space-y-0 overflow-x-hidden">
-      {/* 01. HERO SECTION (Adjusted for iPad Viewport) */}
-      <section className="relative min-h-[75vh] md:min-h-0 lg:min-h-[90vh] flex flex-col justify-center lg:justify-end pt-24 md:pt-28 lg:pt-32 pb-12 lg:pb-16 bg-gradient-to-b from-mist/50 via-limestone to-limestone overflow-hidden border-b border-border-stone/60">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 w-full grid grid-cols-1 md:grid-cols-12 lg:grid-cols-12 gap-8 lg:gap-12 items-center lg:items-end z-10">
+      {/* 01. HERO SECTION (Optimized for iPad Pro & Tablet Viewports) */}
+      <section className="relative pt-24 sm:pt-28 lg:pt-28 pb-12 sm:pb-16 bg-gradient-to-b from-mist/50 via-limestone to-limestone overflow-hidden border-b border-border-stone/60">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 w-full grid grid-cols-1 md:grid-cols-12 lg:grid-cols-12 gap-8 lg:gap-12 items-center z-10">
           <div className="md:col-span-7 lg:col-span-7 space-y-4 sm:space-y-6">
             <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] text-olive font-mono font-medium inline-block px-3 py-1 bg-sage/80 rounded-full border border-olive/20">
               FORMA ATELIER
