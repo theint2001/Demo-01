@@ -1,101 +1,292 @@
-import Image from "next/image";
+import React from 'react';
+import Link from 'next/link';
+import SafeImage from '@/components/ui/SafeImage';
+import { PROJECTS } from '@/data/projects';
+import { JOURNAL_ARTICLES } from '@/data/journal';
+import { SERVICES } from '@/data/services';
+import ProjectCard from '@/components/projects/ProjectCard';
+import SectionHeading from '@/components/ui/SectionHeading';
+import StudioPrinciples from '@/components/studio/StudioPrinciples';
+import JournalCard from '@/components/journal/JournalCard';
+import CTASection from '@/components/ui/CTASection';
+import { ArrowRight } from 'lucide-react';
 
-export default function Home() {
+export default function HomePage() {
+  const featuredProject = PROJECTS.find((p) => p.slug === 'casa-lume') || PROJECTS[0];
+  const storyProject = PROJECTS.find((p) => p.slug === 'mizu-courtyard') || PROJECTS[2];
+  const selectedWork = PROJECTS.slice(0, 7);
+  const selectedJournal = JOURNAL_ARTICLES.slice(0, 3);
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="space-y-0">
+      {/* 01. HERO SECTION */}
+      <section className="relative min-h-[90vh] flex flex-col justify-end pt-32 pb-16 bg-limestone overflow-hidden border-b border-border-stone">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-end z-10">
+          <div className="lg:col-span-7 space-y-6">
+            <span className="text-xs uppercase tracking-[0.3em] text-clay font-medium block">
+              FORMA ATELIER
+            </span>
+            <h1 className="font-serif text-5xl sm:text-7xl lg:text-8xl text-charcoal tracking-tight leading-[0.98]">
+              “Architecture for quiet living.”
+            </h1>
+            <p className="text-base sm:text-xl text-stone font-sans max-w-xl leading-relaxed">
+              We design considered spaces where light, material and everyday life work together.
+            </p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <div className="pt-4 flex items-center space-x-6">
+              <Link
+                href="/projects"
+                className="inline-flex items-center px-6 py-3.5 bg-charcoal text-surface text-xs uppercase tracking-[0.2em] font-medium hover:bg-clay transition-colors"
+              >
+                Explore Projects <ArrowRight className="w-4 h-4 ml-2" />
+              </Link>
+              <Link
+                href="/studio"
+                className="text-xs uppercase tracking-[0.2em] text-stone hover:text-charcoal transition-colors py-2"
+              >
+                About the Studio
+              </Link>
+            </div>
+          </div>
+
+          <div className="lg:col-span-5 relative">
+            <div className="relative aspect-[4/5] w-full bg-stone/10 overflow-hidden shadow-2xl border border-border-stone/60">
+              <SafeImage
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop"
+                alt="Casa Lume architectural hero"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover"
+              />
+              <div className="absolute bottom-4 left-4 right-4 bg-surface/95 backdrop-blur-sm p-4 border border-border-stone/40 text-xs text-stone space-y-1">
+                <p className="text-charcoal font-serif font-medium">Casa Lume — Northern Coast</p>
+                <p className="text-[10px] uppercase tracking-wider">Lime Plaster • Travertine • Daylight Study</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+      </section>
+
+      {/* 02. FEATURED PROJECT HIGHLIGHT */}
+      <section className="py-24 bg-surface border-b border-border-stone">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-12">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-border-stone pb-6 gap-4">
+            <div>
+              <span className="text-xs uppercase tracking-[0.25em] text-clay font-medium block">
+                Flagship Exploration
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl text-charcoal">Featured Work</h2>
+            </div>
+            <Link
+              href={`/projects/${featuredProject.slug}`}
+              className="text-xs uppercase tracking-[0.2em] text-charcoal hover:text-clay font-medium"
+            >
+              View Full Case Study →
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-8 relative aspect-[16/10] bg-stone/10 overflow-hidden shadow-md">
+              <SafeImage
+                src={featuredProject.coverImage}
+                alt={featuredProject.title}
+                fill
+                sizes="(max-width: 1024px) 100vw, 66vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="lg:col-span-4 space-y-6 p-2">
+              <div className="text-xs uppercase tracking-[0.2em] text-stone space-x-2">
+                <span>{featuredProject.category}</span>
+                <span>•</span>
+                <span>{featuredProject.location}</span>
+              </div>
+              <h3 className="font-serif text-3xl sm:text-4xl text-charcoal">
+                {featuredProject.title}
+              </h3>
+              <p className="text-sm text-stone leading-relaxed font-sans">
+                “{featuredProject.description}”
+              </p>
+              <div className="pt-2 text-xs text-stone space-y-2 border-t border-border-stone pt-4 font-mono">
+                <p>Status: {featuredProject.status}</p>
+                <p>Area: {featuredProject.area}</p>
+              </div>
+              <Link
+                href={`/projects/${featuredProject.slug}`}
+                className="inline-flex items-center text-xs uppercase tracking-[0.2em] px-6 py-3 bg-charcoal text-surface hover:bg-clay transition-colors"
+              >
+                View Project
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 03. STUDIO STATEMENT */}
+      <section className="py-28 bg-limestone text-center border-b border-border-stone">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8 space-y-8">
+          <span className="text-xs uppercase tracking-[0.3em] text-clay font-medium">
+            Studio Statement
+          </span>
+          <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-charcoal leading-[1.15]">
+            “We make space for living.”
+          </h2>
+          <p className="text-base sm:text-lg text-stone leading-relaxed font-sans max-w-2xl mx-auto">
+            Forma Atelier is an architecture and interior design studio shaped around calm, function and material honesty. We conceive spaces that honor physical context, human ritual, and quiet daylight.
+          </p>
+          <div className="pt-4">
+            <Link
+              href="/studio"
+              className="text-xs uppercase tracking-[0.2em] text-charcoal border-b border-charcoal pb-1 hover:text-clay hover:border-clay transition-colors"
+            >
+              Read Our Full Story &amp; Ethos
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 04. SELECTED WORK (EDITORIAL RHYTHM) */}
+      <section className="py-24 bg-surface border-b border-border-stone">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-16">
+          <SectionHeading
+            eyebrow="Portfolio Archive"
+            title="Selected Architecture & Interiors"
+            description="A curated selection of private residences, mountain sanctuaries, dining rooms, and creative workplaces."
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12">
+            {selectedWork.map((project, index) => {
+              if (index === 0) return null; // Already featured above
+              const isLarge = index === 1 || index === 4;
+              return (
+                <div
+                  key={project.slug}
+                  className={isLarge ? 'md:col-span-7' : 'md:col-span-5'}
+                >
+                  <ProjectCard
+                    project={project}
+                    layoutVariant={isLarge ? 'large' : 'standard'}
+                  />
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="text-center pt-8">
+            <Link
+              href="/projects"
+              className="inline-flex items-center px-8 py-4 border border-charcoal text-charcoal text-xs uppercase tracking-[0.2em] hover:bg-charcoal hover:text-surface transition-colors"
+            >
+              Explore All 12 Projects →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 05. SERVICES / CAPABILITIES */}
+      <section className="py-24 bg-limestone border-b border-border-stone">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-16">
+          <SectionHeading
+            eyebrow="Practice Disciplines"
+            title="Services & Scope"
+            description="From early spatial strategy to detailed interior material selection and architectural execution."
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {SERVICES.map((serv, idx) => (
+              <div
+                key={serv.slug}
+                className="bg-surface p-8 border border-border-stone space-y-4 hover:border-clay transition-colors"
+              >
+                <span className="font-mono text-xs text-clay">0{idx + 1}</span>
+                <h3 className="font-serif text-2xl text-charcoal">{serv.title}</h3>
+                <p className="text-xs text-stone leading-relaxed font-sans">{serv.tagline}</p>
+                <Link
+                  href="/services"
+                  className="text-[11px] uppercase tracking-[0.2em] text-clay hover:text-charcoal font-medium block pt-2"
+                >
+                  Explore Discipline →
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 06. FEATURED PROJECT STORY (EDITORIAL SPLIT) */}
+      <section className="py-24 bg-surface border-b border-border-stone">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-6 space-y-6">
+              <span className="text-xs uppercase tracking-[0.25em] text-clay font-medium block">
+                Spatial Study
+              </span>
+              <h2 className="font-serif text-4xl sm:text-5xl text-charcoal leading-tight">
+                {storyProject.title} — Urban Privacy &amp; Water Light
+              </h2>
+              <p className="text-sm text-stone leading-relaxed font-sans">
+                {storyProject.longDescription}
+              </p>
+              <div className="p-6 bg-limestone border-l-2 border-clay space-y-2">
+                <span className="text-xs uppercase tracking-[0.15em] text-clay font-medium block">
+                  Design Approach
+                </span>
+                <p className="text-xs text-stone font-serif italic">
+                  “{storyProject.approach}”
+                </p>
+              </div>
+              <Link
+                href={`/projects/${storyProject.slug}`}
+                className="inline-flex items-center text-xs uppercase tracking-[0.2em] text-charcoal hover:text-clay font-medium"
+              >
+                Read Case Study Details →
+              </Link>
+            </div>
+
+            <div className="lg:col-span-6 relative aspect-[4/3] bg-stone/10 shadow-lg">
+              <SafeImage
+                src={storyProject.coverImage}
+                alt={storyProject.title}
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 07. APPROACH / PHILOSOPHY (4 PILLARS) */}
+      <StudioPrinciples />
+
+      {/* 08. JOURNAL & INSIGHTS */}
+      <section className="py-24 bg-limestone border-b border-border-stone">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-16">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-border-stone pb-6 gap-4">
+            <SectionHeading
+              eyebrow="Architectural Journal"
+              title="Essays &amp; Observations"
+              description="Thoughts on light, materiality, spatial proportion, and the rituals of living."
+            />
+            <Link
+              href="/journal"
+              className="text-xs uppercase tracking-[0.2em] text-charcoal hover:text-clay font-medium shrink-0"
+            >
+              View All Articles →
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {selectedJournal.map((article) => (
+              <JournalCard key={article.slug} article={article} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 09. CONTACT CTA */}
+      <CTASection />
     </div>
   );
 }
