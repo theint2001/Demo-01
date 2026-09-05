@@ -54,8 +54,8 @@ export default function Header() {
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1 border border-border-stone/60 bg-surface/60 backdrop-blur-sm rounded-full px-4 py-1.5 shadow-sm" aria-label="Main Navigation">
+          {/* Desktop Navigation (Visible on lg screens >= 1024px) */}
+          <nav className="hidden lg:flex items-center space-x-1 border border-border-stone/60 bg-surface/60 backdrop-blur-sm rounded-full px-4 py-1.5 shadow-sm" aria-label="Main Navigation">
             {navLinks.map((link) => {
               const isActive = pathname.startsWith(link.href);
               return (
@@ -72,8 +72,8 @@ export default function Header() {
             })}
           </nav>
 
-          {/* Contact Button */}
-          <div className="hidden md:block">
+          {/* Contact Button (Visible on lg screens >= 1024px) */}
+          <div className="hidden lg:block">
             <Link
               href="/contact"
               className="inline-flex items-center text-[11px] uppercase tracking-[0.2em] px-6 py-2.5 rounded-full border border-olive text-olive hover:bg-olive hover:text-surface transition-all duration-300 font-medium shadow-xs"
@@ -82,11 +82,11 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile & iPad Menu Button (Visible on screens < 1024px including iPad) */}
           <button
             type="button"
             onClick={() => setMobileNavOpen(true)}
-            className="md:hidden p-2 text-charcoal hover:text-olive focus:outline-none"
+            className="lg:hidden p-2 text-charcoal hover:text-olive focus:outline-none"
             aria-label="Open Mobile Menu"
           >
             <Menu className="w-6 h-6" />
@@ -94,7 +94,7 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobile Navigation Drawer */}
+      {/* Mobile & iPad Navigation Drawer */}
       <MobileNav
         isOpen={mobileNavOpen}
         onClose={() => setMobileNavOpen(false)}
