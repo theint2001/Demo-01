@@ -12,8 +12,8 @@ export default function Footer() {
               <span className="font-serif text-2xl sm:text-3xl tracking-wider text-surface block">
                 FORMA ATELIER
               </span>
-              <span className="text-xs uppercase tracking-[0.25em] text-limestone/60 mt-1 block">
-                Architecture & Interiors
+              <span className="text-[10px] uppercase tracking-[0.25em] text-sage font-mono mt-1 block">
+                Architecture &amp; Interiors
               </span>
             </Link>
             <p className="text-sm font-serif italic text-limestone/80 max-w-sm leading-relaxed">
@@ -23,10 +23,10 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="md:col-span-3 space-y-4">
-            <h4 className="text-[11px] uppercase tracking-[0.25em] text-clay font-medium">
+            <h4 className="text-[11px] uppercase tracking-[0.25em] text-clay font-mono font-medium">
               Navigation
             </h4>
-            <ul className="space-y-3 text-xs uppercase tracking-[0.15em]">
+            <ul className="space-y-3 text-xs uppercase tracking-[0.15em] font-mono">
               <li>
                 <Link href="/projects" className="text-limestone/70 hover:text-surface transition-colors">
                   Projects
@@ -57,14 +57,14 @@ export default function Footer() {
 
           {/* Contact & Social */}
           <div className="md:col-span-4 space-y-4">
-            <h4 className="text-[11px] uppercase tracking-[0.25em] text-clay font-medium">
+            <h4 className="text-[11px] uppercase tracking-[0.25em] text-clay font-mono font-medium">
               Studio Reach
             </h4>
             <div className="space-y-2 text-xs text-limestone/70 font-sans leading-relaxed">
               <p>Inquiries: hello@forma-atelier.example</p>
               <p>Locations: Northern Coast &amp; Old Quarter Studios</p>
             </div>
-            <div className="pt-4 flex items-center space-x-6 text-xs uppercase tracking-[0.2em] text-limestone/60">
+            <div className="pt-4 flex items-center space-x-6 text-xs uppercase tracking-[0.2em] font-mono text-limestone/60">
               <a
                 href="https://instagram.com"
                 target="_blank"
@@ -86,9 +86,9 @@ export default function Footer() {
         </div>
 
         {/* Footer Credit & Copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-limestone/40 space-y-4 sm:space-y-0">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-limestone/50 space-y-4 sm:space-y-0">
           <p>© {new Date().getFullYear()} FORMA ATELIER. All rights reserved.</p>
-          <p className="text-[11px] font-sans tracking-wide">
+          <p className="text-[11px] font-mono tracking-wide text-sage/70">
             Concept website designed &amp; built by Nexora.
           </p>
         </div>

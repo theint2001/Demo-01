@@ -19,11 +19,11 @@ export default function HomePage() {
 
   return (
     <div className="space-y-0">
-      {/* 01. HERO SECTION */}
-      <section className="relative min-h-[90vh] flex flex-col justify-end pt-32 pb-16 bg-limestone overflow-hidden border-b border-border-stone">
+      {/* 01. HERO SECTION (Soft Fresh Cream & Sage Tint) */}
+      <section className="relative min-h-[90vh] flex flex-col justify-end pt-32 pb-16 bg-gradient-to-b from-mist/50 via-limestone to-limestone overflow-hidden border-b border-border-stone/60">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-end z-10">
           <div className="lg:col-span-7 space-y-6">
-            <span className="text-xs uppercase tracking-[0.3em] text-clay font-medium block">
+            <span className="text-xs uppercase tracking-[0.25em] text-olive font-mono font-medium inline-block px-3.5 py-1 bg-sage/80 rounded-full border border-olive/20">
               FORMA ATELIER
             </span>
             <h1 className="font-serif text-5xl sm:text-7xl lg:text-8xl text-charcoal tracking-tight leading-[0.98]">
@@ -36,13 +36,13 @@ export default function HomePage() {
             <div className="pt-4 flex items-center space-x-6">
               <Link
                 href="/projects"
-                className="inline-flex items-center px-6 py-3.5 bg-charcoal text-surface text-xs uppercase tracking-[0.2em] font-medium hover:bg-clay transition-colors"
+                className="inline-flex items-center px-7 py-3.5 bg-olive text-surface text-xs uppercase tracking-[0.2em] font-medium hover:bg-clay transition-all duration-300 rounded-full shadow-sm"
               >
                 Explore Projects <ArrowRight className="w-4 h-4 ml-2" />
               </Link>
               <Link
                 href="/studio"
-                className="text-xs uppercase tracking-[0.2em] text-stone hover:text-charcoal transition-colors py-2"
+                className="text-xs uppercase tracking-[0.2em] text-stone hover:text-olive transition-colors py-2 font-mono"
               >
                 About the Studio
               </Link>
@@ -50,18 +50,20 @@ export default function HomePage() {
           </div>
 
           <div className="lg:col-span-5 relative">
-            <div className="relative aspect-[4/5] w-full bg-stone/10 overflow-hidden shadow-2xl border border-border-stone/60">
-              <SafeImage
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop"
-                alt="Casa Lume architectural hero"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 40vw"
-                className="object-cover"
-              />
-              <div className="absolute bottom-4 left-4 right-4 bg-surface/95 backdrop-blur-sm p-4 border border-border-stone/40 text-xs text-stone space-y-1">
-                <p className="text-charcoal font-serif font-medium">Casa Lume — Northern Coast</p>
-                <p className="text-[10px] uppercase tracking-wider">Lime Plaster • Travertine • Daylight Study</p>
+            <div className="relative aspect-[4/5] w-full bg-surface rounded-3xl overflow-hidden shadow-xl border border-border-stone p-2">
+              <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                <SafeImage
+                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop"
+                  alt="Casa Lume architectural hero"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover"
+                />
+                <div className="absolute bottom-4 left-4 right-4 bg-surface/95 backdrop-blur-md p-4 rounded-xl border border-border-stone/60 text-xs text-stone space-y-1 shadow-sm">
+                  <p className="text-charcoal font-serif font-medium text-sm">Casa Lume — Northern Coast</p>
+                  <p className="text-[10px] uppercase tracking-wider font-mono text-olive">Lime Plaster • Travertine • Daylight Study</p>
+                </div>
               </div>
             </div>
           </div>
@@ -69,25 +71,25 @@ export default function HomePage() {
       </section>
 
       {/* 02. FEATURED PROJECT HIGHLIGHT */}
-      <section className="py-24 bg-surface border-b border-border-stone">
+      <section className="py-24 bg-surface border-b border-border-stone/60">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-12">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-border-stone pb-6 gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-border-stone/60 pb-6 gap-4">
             <div>
-              <span className="text-xs uppercase tracking-[0.25em] text-clay font-medium block">
+              <span className="text-xs uppercase tracking-[0.25em] text-clay font-mono font-medium inline-block px-3 py-1 bg-clay/10 rounded-full mb-2">
                 Flagship Exploration
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl text-charcoal">Featured Work</h2>
             </div>
             <Link
               href={`/projects/${featuredProject.slug}`}
-              className="text-xs uppercase tracking-[0.2em] text-charcoal hover:text-clay font-medium"
+              className="text-xs uppercase tracking-[0.2em] text-olive hover:text-clay font-medium font-mono"
             >
               View Full Case Study →
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-8 relative aspect-[16/10] bg-stone/10 overflow-hidden shadow-md">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-limestone/50 p-6 sm:p-10 rounded-3xl border border-border-stone/60">
+            <div className="lg:col-span-8 relative aspect-[16/10] bg-surface overflow-hidden rounded-2xl shadow-md">
               <SafeImage
                 src={featuredProject.coverImage}
                 alt={featuredProject.title}
@@ -97,10 +99,11 @@ export default function HomePage() {
               />
             </div>
             <div className="lg:col-span-4 space-y-6 p-2">
-              <div className="text-xs uppercase tracking-[0.2em] text-stone space-x-2">
-                <span>{featuredProject.category}</span>
-                <span>•</span>
-                <span>{featuredProject.location}</span>
+              <div className="flex items-center space-x-2">
+                <span className="px-3 py-1 bg-sage text-olive font-mono text-[10px] uppercase tracking-wider rounded-full font-medium">
+                  {featuredProject.category}
+                </span>
+                <span className="text-xs text-stone font-mono">• {featuredProject.location}</span>
               </div>
               <h3 className="font-serif text-3xl sm:text-4xl text-charcoal">
                 {featuredProject.title}
@@ -108,13 +111,13 @@ export default function HomePage() {
               <p className="text-sm text-stone leading-relaxed font-sans">
                 “{featuredProject.description}”
               </p>
-              <div className="pt-2 text-xs text-stone space-y-2 border-t border-border-stone pt-4 font-mono">
-                <p>Status: {featuredProject.status}</p>
-                <p>Area: {featuredProject.area}</p>
+              <div className="text-xs text-stone space-y-1 border-t border-border-stone/60 pt-4 font-mono">
+                <p>Status: <span className="text-charcoal font-medium">{featuredProject.status}</span></p>
+                <p>Area: <span className="text-charcoal font-medium">{featuredProject.area}</span></p>
               </div>
               <Link
                 href={`/projects/${featuredProject.slug}`}
-                className="inline-flex items-center text-xs uppercase tracking-[0.2em] px-6 py-3 bg-charcoal text-surface hover:bg-clay transition-colors"
+                className="inline-flex items-center text-xs uppercase tracking-[0.2em] px-6 py-3 bg-olive text-surface hover:bg-clay transition-all duration-300 rounded-full shadow-xs"
               >
                 View Project
               </Link>
@@ -124,9 +127,9 @@ export default function HomePage() {
       </section>
 
       {/* 03. STUDIO STATEMENT */}
-      <section className="py-28 bg-limestone text-center border-b border-border-stone">
+      <section className="py-28 bg-gradient-to-b from-sand/30 via-limestone to-mist/30 text-center border-b border-border-stone/60">
         <div className="max-w-4xl mx-auto px-6 sm:px-8 space-y-8">
-          <span className="text-xs uppercase tracking-[0.3em] text-clay font-medium">
+          <span className="text-xs uppercase tracking-[0.25em] text-olive font-mono font-medium inline-block px-3.5 py-1 bg-sage rounded-full">
             Studio Statement
           </span>
           <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-charcoal leading-[1.15]">
@@ -138,7 +141,7 @@ export default function HomePage() {
           <div className="pt-4">
             <Link
               href="/studio"
-              className="text-xs uppercase tracking-[0.2em] text-charcoal border-b border-charcoal pb-1 hover:text-clay hover:border-clay transition-colors"
+              className="text-xs uppercase tracking-[0.2em] text-olive font-mono border-b border-olive/40 pb-1 hover:text-clay hover:border-clay transition-colors"
             >
               Read Our Full Story &amp; Ethos
             </Link>
@@ -146,8 +149,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 04. SELECTED WORK (EDITORIAL RHYTHM) */}
-      <section className="py-24 bg-surface border-b border-border-stone">
+      {/* 04. SELECTED WORK */}
+      <section className="py-24 bg-surface border-b border-border-stone/60">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-16">
           <SectionHeading
             eyebrow="Portfolio Archive"
@@ -157,7 +160,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12">
             {selectedWork.map((project, index) => {
-              if (index === 0) return null; // Already featured above
+              if (index === 0) return null;
               const isLarge = index === 1 || index === 4;
               return (
                 <div
@@ -176,7 +179,7 @@ export default function HomePage() {
           <div className="text-center pt-8">
             <Link
               href="/projects"
-              className="inline-flex items-center px-8 py-4 border border-charcoal text-charcoal text-xs uppercase tracking-[0.2em] hover:bg-charcoal hover:text-surface transition-colors"
+              className="inline-flex items-center px-8 py-4 border border-olive text-olive text-xs uppercase tracking-[0.2em] hover:bg-olive hover:text-surface transition-all duration-300 rounded-full font-mono shadow-xs"
             >
               Explore All 12 Projects →
             </Link>
@@ -185,7 +188,7 @@ export default function HomePage() {
       </section>
 
       {/* 05. SERVICES / CAPABILITIES */}
-      <section className="py-24 bg-limestone border-b border-border-stone">
+      <section className="py-24 bg-limestone border-b border-border-stone/60">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-16">
           <SectionHeading
             eyebrow="Practice Disciplines"
@@ -197,14 +200,14 @@ export default function HomePage() {
             {SERVICES.map((serv, idx) => (
               <div
                 key={serv.slug}
-                className="bg-surface p-8 border border-border-stone space-y-4 hover:border-clay transition-colors"
+                className="bg-surface p-8 rounded-3xl border border-border-stone/60 space-y-4 hover:border-olive hover:shadow-lg transition-all duration-300"
               >
-                <span className="font-mono text-xs text-clay">0{idx + 1}</span>
+                <span className="font-mono text-xs text-clay px-2.5 py-1 bg-clay/10 rounded-full inline-block">0{idx + 1}</span>
                 <h3 className="font-serif text-2xl text-charcoal">{serv.title}</h3>
                 <p className="text-xs text-stone leading-relaxed font-sans">{serv.tagline}</p>
                 <Link
                   href="/services"
-                  className="text-[11px] uppercase tracking-[0.2em] text-clay hover:text-charcoal font-medium block pt-2"
+                  className="text-[11px] uppercase tracking-[0.2em] text-olive hover:text-clay font-mono font-medium block pt-2"
                 >
                   Explore Discipline →
                 </Link>
@@ -214,12 +217,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 06. FEATURED PROJECT STORY (EDITORIAL SPLIT) */}
-      <section className="py-24 bg-surface border-b border-border-stone">
+      {/* 06. FEATURED PROJECT STORY */}
+      <section className="py-24 bg-surface border-b border-border-stone/60">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-mist/40 p-8 sm:p-12 rounded-3xl border border-border-stone/60">
             <div className="lg:col-span-6 space-y-6">
-              <span className="text-xs uppercase tracking-[0.25em] text-clay font-medium block">
+              <span className="text-xs uppercase tracking-[0.25em] text-olive font-mono font-medium inline-block px-3 py-1 bg-sage rounded-full">
                 Spatial Study
               </span>
               <h2 className="font-serif text-4xl sm:text-5xl text-charcoal leading-tight">
@@ -228,8 +231,8 @@ export default function HomePage() {
               <p className="text-sm text-stone leading-relaxed font-sans">
                 {storyProject.longDescription}
               </p>
-              <div className="p-6 bg-limestone border-l-2 border-clay space-y-2">
-                <span className="text-xs uppercase tracking-[0.15em] text-clay font-medium block">
+              <div className="p-6 bg-surface rounded-2xl border-l-4 border-olive space-y-2 shadow-xs">
+                <span className="text-xs uppercase tracking-[0.15em] text-olive font-mono font-medium block">
                   Design Approach
                 </span>
                 <p className="text-xs text-stone font-serif italic">
@@ -238,13 +241,13 @@ export default function HomePage() {
               </div>
               <Link
                 href={`/projects/${storyProject.slug}`}
-                className="inline-flex items-center text-xs uppercase tracking-[0.2em] text-charcoal hover:text-clay font-medium"
+                className="inline-flex items-center text-xs uppercase tracking-[0.2em] text-olive hover:text-clay font-mono font-medium"
               >
                 Read Case Study Details →
               </Link>
             </div>
 
-            <div className="lg:col-span-6 relative aspect-[4/3] bg-stone/10 shadow-lg">
+            <div className="lg:col-span-6 relative aspect-[4/3] bg-surface rounded-2xl overflow-hidden shadow-lg border border-border-stone/60">
               <SafeImage
                 src={storyProject.coverImage}
                 alt={storyProject.title}
@@ -261,9 +264,9 @@ export default function HomePage() {
       <StudioPrinciples />
 
       {/* 08. JOURNAL & INSIGHTS */}
-      <section className="py-24 bg-limestone border-b border-border-stone">
+      <section className="py-24 bg-limestone border-b border-border-stone/60">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-16">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-border-stone pb-6 gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-border-stone/60 pb-6 gap-4">
             <SectionHeading
               eyebrow="Architectural Journal"
               title="Essays &amp; Observations"
@@ -271,7 +274,7 @@ export default function HomePage() {
             />
             <Link
               href="/journal"
-              className="text-xs uppercase tracking-[0.2em] text-charcoal hover:text-clay font-medium shrink-0"
+              className="text-xs uppercase tracking-[0.2em] text-olive hover:text-clay font-mono font-medium shrink-0"
             >
               View All Articles →
             </Link>

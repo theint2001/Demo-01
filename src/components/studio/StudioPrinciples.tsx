@@ -25,10 +25,10 @@ export default function StudioPrinciples() {
   ];
 
   return (
-    <section className="py-20 bg-surface border-y border-border-stone" aria-label="Studio Principles">
+    <section className="py-24 bg-gradient-to-b from-limestone via-surface to-limestone border-y border-border-stone/60" aria-label="Studio Principles">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-16">
         <div className="max-w-2xl space-y-4">
-          <span className="text-[11px] uppercase tracking-[0.25em] text-clay font-medium block">
+          <span className="text-xs uppercase tracking-[0.25em] text-olive font-mono font-medium inline-block px-3.5 py-1 bg-sage rounded-full">
             Core Design Ethos
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-charcoal">
@@ -39,13 +39,13 @@ export default function StudioPrinciples() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
           {principles.map((p, idx) => (
-            <div key={p.title} className="space-y-4 border-l-2 border-clay/40 pl-6">
-              <span className="text-xs font-mono text-clay">0{idx + 1}</span>
+            <div key={p.title} className="bg-surface p-8 sm:p-10 rounded-3xl border border-border-stone/60 space-y-4 shadow-sm hover:border-olive transition-all duration-300">
+              <span className="text-xs font-mono text-clay px-3 py-1 bg-clay/10 rounded-full inline-block font-medium">0{idx + 1}</span>
               <h3 className="font-serif text-2xl sm:text-3xl text-charcoal">{p.title}</h3>
-              <p className="font-serif italic text-sm text-stone">{p.tagline}</p>
-              <p className="text-xs sm:text-sm text-stone/90 leading-relaxed font-sans pt-2">
+              <p className="font-serif italic text-sm text-olive">{p.tagline}</p>
+              <p className="text-xs sm:text-sm text-stone leading-relaxed font-sans pt-2">
                 {p.description}
               </p>
             </div>

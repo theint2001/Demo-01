@@ -9,23 +9,25 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        limestone: "#F3F4EF",
-        surface: "#FFFFFF",
-        charcoal: "#141716",
-        stone: "#5E6460",
-        graphite: "#1E2321",
-        clay: "#B86B4D",
-        olive: "#4A5D4E",
-        sage: "#E5EADF",
-        "border-stone": "#E1E4DC",
+        limestone: "#F4F0E8", // Soft warm oat / silk
+        surface: "#FDFCF7",   // Warm creamy linen surface
+        charcoal: "#2A2723",  // Soft warm espresso (not stark black!)
+        stone: "#6F746D",     // Soft sage greige
+        graphite: "#232825",  // Deep olive slate
+        clay: "#D99B82",      // Soft powder clay / muted terracotta
+        olive: "#6B7F6D",     // Soft fresh mint sage
+        sage: "#E2E9E2",      // Soft pastel mint tint
+        sand: "#EAE3D5",      // Soft warm sand
+        mist: "#E8EDEA",      // Soft mist green
+        "border-stone": "#E2DDD3",
       },
       fontFamily: {
         serif: ["var(--font-serif)", "Cormorant Garamond", "Georgia", "serif"],
         sans: ["var(--font-sans)", "Plus Jakarta Sans", "Inter", "sans-serif"],
       },
       borderRadius: {
-        '2xl': '1rem',
-        '3xl': '1.5rem',
+        '2xl': '1.25rem',
+        '3xl': '1.75rem',
       },
     },
   },
