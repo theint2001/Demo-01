@@ -36,7 +36,7 @@ export default function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
           isScrolled
-            ? 'bg-limestone/90 backdrop-blur-md border-b border-border-stone py-4 shadow-sm'
+            ? 'bg-surface/85 backdrop-blur-md border-b border-border-stone/60 py-3.5 shadow-sm'
             : 'bg-transparent py-6'
         }`}
       >
@@ -44,32 +44,29 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="group flex flex-col focus:outline-none focus:ring-1 focus:ring-clay"
+            className="group flex flex-col focus:outline-none focus:ring-1 focus:ring-olive"
           >
-            <span className="font-serif text-xl sm:text-2xl font-medium tracking-wider text-charcoal group-hover:text-clay transition-colors duration-300">
+            <span className="font-serif text-xl sm:text-2xl font-medium tracking-wider text-charcoal group-hover:text-olive transition-colors duration-300">
               FORMA ATELIER
             </span>
-            <span className="text-[10px] uppercase tracking-[0.25em] text-stone">
-              Architecture & Interiors
+            <span className="text-[10px] uppercase tracking-[0.25em] text-olive font-mono">
+              Architecture &amp; Interiors
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-10" aria-label="Main Navigation">
+          <nav className="hidden md:flex items-center space-x-1 border border-border-stone/60 bg-surface/60 backdrop-blur-sm rounded-full px-4 py-1.5 shadow-sm" aria-label="Main Navigation">
             {navLinks.map((link) => {
               const isActive = pathname.startsWith(link.href);
               return (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`relative text-xs uppercase tracking-[0.2em] transition-colors duration-300 py-1 ${
-                    isActive ? 'text-charcoal font-medium' : 'text-stone hover:text-charcoal'
+                  className={`relative text-[11px] uppercase tracking-[0.18em] transition-all duration-300 px-4 py-1.5 rounded-full ${
+                    isActive ? 'text-surface bg-olive font-medium shadow-xs' : 'text-stone hover:text-charcoal hover:bg-sage/50'
                   }`}
                 >
                   {link.name}
-                  {isActive && (
-                    <span className="absolute bottom-0 left-0 right-0 h-[1px] bg-clay transition-all duration-300" />
-                  )}
                 </Link>
               );
             })}
@@ -79,7 +76,7 @@ export default function Header() {
           <div className="hidden md:block">
             <Link
               href="/contact"
-              className="inline-flex items-center text-xs uppercase tracking-[0.2em] px-5 py-2.5 border border-charcoal/20 text-charcoal hover:border-charcoal hover:bg-charcoal hover:text-surface transition-all duration-300"
+              className="inline-flex items-center text-[11px] uppercase tracking-[0.2em] px-6 py-2.5 rounded-full border border-olive text-olive hover:bg-olive hover:text-surface transition-all duration-300 font-medium shadow-xs"
             >
               Contact
             </Link>
@@ -89,7 +86,7 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setMobileNavOpen(true)}
-            className="md:hidden p-2 text-charcoal hover:text-clay focus:outline-none focus:ring-1 focus:ring-clay"
+            className="md:hidden p-2 text-charcoal hover:text-olive focus:outline-none"
             aria-label="Open Mobile Menu"
           >
             <Menu className="w-6 h-6" />

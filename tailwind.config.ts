@@ -9,18 +9,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        limestone: "#E9E4DA",
-        surface: "#F7F5F0",
-        charcoal: "#1C1C1A",
-        stone: "#686760",
-        graphite: "#242522",
-        clay: "#9B725E",
-        olive: "#7B8172",
-        "border-stone": "#D4D0C7",
+        limestone: "#F3F4EF",
+        surface: "#FFFFFF",
+        charcoal: "#141716",
+        stone: "#5E6460",
+        graphite: "#1E2321",
+        clay: "#B86B4D",
+        olive: "#4A5D4E",
+        sage: "#E5EADF",
+        "border-stone": "#E1E4DC",
       },
       fontFamily: {
         serif: ["var(--font-serif)", "Cormorant Garamond", "Georgia", "serif"],
         sans: ["var(--font-sans)", "Plus Jakarta Sans", "Inter", "sans-serif"],
+      },
+      borderRadius: {
+        '2xl': '1rem',
+        '3xl': '1.5rem',
       },
     },
   },

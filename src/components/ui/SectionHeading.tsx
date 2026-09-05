@@ -23,8 +23,8 @@ export default function SectionHeading({
     >
       {eyebrow && (
         <span
-          className={`text-[11px] uppercase tracking-[0.25em] font-medium block ${
-            lightTheme ? 'text-clay' : 'text-clay'
+          className={`text-[11px] uppercase tracking-[0.25em] font-mono font-medium inline-block px-3 py-1 rounded-full ${
+            lightTheme ? 'text-sage bg-white/10' : 'text-olive bg-sage/60'
           }`}
         >
           {eyebrow}

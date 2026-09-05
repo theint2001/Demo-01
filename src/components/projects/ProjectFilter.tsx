@@ -19,12 +19,12 @@ export default function ProjectFilter({
   filteredCount,
 }: ProjectFilterProps) {
   return (
-    <div className="flex flex-col md:flex-row md:items-center justify-between pb-8 border-b border-border-stone/80 gap-4">
-      {/* Category Tabs */}
+    <div className="flex flex-col md:flex-row md:items-center justify-between pb-8 border-b border-border-stone/60 gap-4">
+      {/* Category Tabs (Fresh Pill Design) */}
       <div
         role="tablist"
         aria-label="Project categories filter"
-        className="flex flex-wrap items-center gap-2 sm:gap-4"
+        className="flex flex-wrap items-center gap-2 sm:gap-3"
       >
         {categories.map((cat) => {
           const isActive = activeCategory === cat;
@@ -34,24 +34,21 @@ export default function ProjectFilter({
               role="tab"
               aria-selected={isActive}
               onClick={() => onSelectCategory(cat)}
-              className={`text-xs uppercase tracking-[0.2em] py-2 px-3 transition-all duration-300 relative focus:outline-none focus:ring-1 focus:ring-clay ${
+              className={`text-xs uppercase tracking-[0.15em] py-2 px-5 rounded-full transition-all duration-300 font-medium focus:outline-none focus:ring-1 focus:ring-olive ${
                 isActive
-                  ? 'text-charcoal font-medium'
-                  : 'text-stone hover:text-charcoal'
+                  ? 'bg-olive text-surface shadow-xs'
+                  : 'bg-surface text-stone border border-border-stone/80 hover:border-olive hover:text-charcoal'
               }`}
             >
               {cat}
-              {isActive && (
-                <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-clay transition-all duration-300" />
-              )}
             </button>
           );
         })}
       </div>
 
       {/* Result Counter */}
-      <div className="text-xs text-stone uppercase tracking-[0.15em] font-sans">
-        Showing <span className="text-charcoal font-medium">{filteredCount}</span> of{' '}
+      <div className="text-xs text-stone font-mono uppercase tracking-[0.15em] bg-surface px-4 py-2 rounded-full border border-border-stone/60 shrink-0">
+        Showing <span className="text-olive font-bold">{filteredCount}</span> /{' '}
         <span>{totalCount}</span> Projects
       </div>
     </div>

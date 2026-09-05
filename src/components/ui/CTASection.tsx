@@ -19,10 +19,10 @@ export default function CTASection({
     : '/contact';
 
   return (
-    <section className="py-24 bg-graphite text-limestone relative overflow-hidden border-t border-graphite/40">
+    <section className="py-24 bg-graphite text-limestone relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
-        <div className="max-w-3xl space-y-8">
-          <span className="text-[11px] uppercase tracking-[0.3em] text-clay font-medium block">
+        <div className="max-w-3xl space-y-8 bg-white/5 p-10 sm:p-16 rounded-3xl border border-white/10 backdrop-blur-md">
+          <span className="text-[11px] uppercase tracking-[0.25em] text-sage font-mono font-medium block bg-white/10 w-max px-3.5 py-1 rounded-full">
             Start a Conversation
           </span>
           <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl tracking-tight text-surface leading-[1.1]">
@@ -34,13 +34,13 @@ export default function CTASection({
           <div className="pt-4 flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6">
             <Link
               href={targetHref}
-              className="inline-flex items-center justify-center px-8 py-4 bg-surface text-charcoal font-sans text-xs uppercase tracking-[0.2em] font-medium hover:bg-limestone transition-all duration-300 shadow-md"
+              className="inline-flex items-center justify-center px-8 py-4 bg-surface text-charcoal font-sans text-xs uppercase tracking-[0.2em] font-medium hover:bg-clay hover:text-surface transition-all duration-300 rounded-full shadow-md"
             >
               {buttonText}
             </Link>
             <Link
               href="/projects"
-              className="inline-flex items-center text-xs uppercase tracking-[0.2em] text-limestone/70 hover:text-surface transition-colors py-2"
+              className="inline-flex items-center text-xs uppercase tracking-[0.2em] text-limestone/80 hover:text-surface transition-colors py-2 font-mono"
             >
               Explore All Projects →
             </Link>
