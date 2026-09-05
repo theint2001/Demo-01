@@ -19,10 +19,10 @@ export default function HomePage() {
 
   return (
     <div className="space-y-0 overflow-x-hidden">
-      {/* 01. HERO SECTION (Mobile Responsive) */}
-      <section className="relative min-h-[85vh] sm:min-h-[90vh] flex flex-col justify-end pt-24 sm:pt-32 pb-12 sm:pb-16 bg-gradient-to-b from-mist/50 via-limestone to-limestone overflow-hidden border-b border-border-stone/60">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end z-10">
-          <div className="lg:col-span-7 space-y-4 sm:space-y-6">
+      {/* 01. HERO SECTION (Adjusted for iPad Viewport) */}
+      <section className="relative min-h-[75vh] md:min-h-0 lg:min-h-[90vh] flex flex-col justify-center lg:justify-end pt-24 md:pt-28 lg:pt-32 pb-12 lg:pb-16 bg-gradient-to-b from-mist/50 via-limestone to-limestone overflow-hidden border-b border-border-stone/60">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 w-full grid grid-cols-1 md:grid-cols-12 lg:grid-cols-12 gap-8 lg:gap-12 items-center lg:items-end z-10">
+          <div className="md:col-span-7 lg:col-span-7 space-y-4 sm:space-y-6">
             <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] text-olive font-mono font-medium inline-block px-3 py-1 bg-sage/80 rounded-full border border-olive/20">
               FORMA ATELIER
             </span>
@@ -49,7 +49,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="lg:col-span-5 relative">
+          <div className="md:col-span-5 lg:col-span-5 relative">
             <div className="relative aspect-[4/3] sm:aspect-[4/5] w-full bg-surface rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-border-stone p-1.5 sm:p-2">
               <div className="relative w-full h-full rounded-xl sm:rounded-2xl overflow-hidden">
                 <SafeImage
